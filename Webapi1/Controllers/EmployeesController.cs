@@ -12,22 +12,23 @@ namespace Webapi1.Controllers
 {
     public class EmployeesController : ApiController
     {
-
+        
          Employee[] employees = new Employee[]{
           new Employee { ID = 1, Name = "Mark", JoiningDate =
-             DateTime.Parse(DateTime.Today.ToString()), Age = 30 },
+             DateTime.Parse(DateTime.Today.ToString()), Age = 30,blood_group="A+" },
           new Employee { ID = 2, Name = "Allan", JoiningDate =
-             DateTime.Parse(DateTime.Today.ToString()), Age = 35 },
+             DateTime.Parse(DateTime.Today.ToString()), Age = 35,blood_group="b+" },
           new Employee { ID = 3, Name = "Johny", JoiningDate =
-             DateTime.Parse(DateTime.Today.ToString()), Age = 21 }
+             DateTime.Parse(DateTime.Today.ToString()), Age = 21,blood_group="ab+" }
+          
        };
         [Route("api/GetAllEmployees")]
          public IEnumerable<Employee> GetAllEmployees()
          {
              return employees;
          }
-
-         public IHttpActionResult GetEmployee(int id)
+       
+        public IHttpActionResult GetEmployee(int id)
          {
              var employee = employees.FirstOrDefault((p) => p.ID == id);
              if (employee == null)

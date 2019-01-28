@@ -11,5 +11,7 @@ namespace Webapi1.Models
         public string Name { get; set; }
         public DateTime JoiningDate { get; set; }
         public int Age { get; set; }
+        public string blood_group { get; set; }
+
     }
 }

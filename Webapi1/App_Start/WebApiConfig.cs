@@ -22,7 +22,7 @@ namespace Webapi1
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/",
+                routeTemplate: "api/{controller}/{ID}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }
